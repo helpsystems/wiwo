@@ -1,0 +1,112 @@
+<!--
+-*- coding: iso-8859-15 -*-
+
+Copyright 2003-2015 CORE Security Technologies
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Authors:
+         Andres Blanco (6e726d)
+         Andres Gazzoli
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Wiwo - Traffic Analyzer</title>
+    <script src="libs/jquery-1.11.3.js"></script>
+    <script src="libs/Chart.min.js"></script>
+    <script src="charts-global-config.js"></script>
+    <script src="helper_functions.js"></script>
+    <script src="charts.js"></script>
+    
+    <script>
+        function init() {
+            setGlobalConfig();
+            loadCharts();
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <img src="./images/banner.png" />
+    <hr/>
+    <hr/>
+    <div>
+        <div> 
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <div style="font-size:1.1em">Frames per channel</div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td colspan="2">
+                        <div style="font-size:1.1em">Data/QoS Data frames per channel</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <canvas id="frames_per_channel_chart-area" width="400" height="400"></canvas>
+                    </td>
+                    <td style="vertical-align:top; font-size:0.8em">
+                        <div id="frames_per_channel_chart-area-ref"/>
+                    </td>
+                    <td width="100">
+                        &nbsp;
+                    </td>
+                    <td>
+                        <canvas id="data_qos_data_frames_per_channel_chart-bar" width="500" height="300"></canvas>
+                    </td>
+                    <td style="vertical-align:top; font-size:0.8em">
+                        <div id="data_qos_data_frames_per_channel_chart-bar-ref"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <hr/>
+
+        <div> 
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <div style="font-size:1.1em">Access Points per channel</div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td colspan="2">
+                        <div style="font-size:1.1em">Traffic encryption</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <canvas id="access_points_per_channel_chart-bar" width="400" height="400"></canvas>
+                    </td>
+                    <td style="vertical-align:top; font-size:0.8em">
+                        <div id="access_points_per_channel_chart-bar-ref"/>
+                    </td>
+                    <td width="100">
+                        &nbsp;
+                    </td>
+                    <td>
+                        <canvas id="traffic_encryption_chart-area" width="500" height="400"></canvas>
+                    </td>
+                    <td style="vertical-align:top; font-size:0.8em">
+                        <div id="traffic_encryption_chart-area-ref"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
