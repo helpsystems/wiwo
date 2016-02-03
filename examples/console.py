@@ -169,7 +169,7 @@ def select_interface(worker):
         if option == '':
             return -1
 
-    return int(opt)
+    return int(option)
 
 
 def select_channel(iface):
